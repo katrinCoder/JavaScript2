@@ -5,18 +5,21 @@ const products = [
     {id: 4, title: 'Gamepad', price: 4500},
 ];
 
-const renderProduct = (title, price) => {
-    return `<div class="product-item">
-                <h3>${title}</h3>
-                <p>${price}</p>
-                <button class="by-btn">Добавить в корзину</button>
-              </div>`;
-};
+const renderProduct = (title = 'Товар', price = 1000) =>
+    `<div class="product-item">
+        <h3>${title}</h3>
+        <p>${price}</p>
+        <button class="by-btn">Добавить в корзину</button>
+    </div>`;
+
+const insertList = (productList) => {
+    for (let i=0; i < productList.length; i++) {
+        document.querySelector('.products').insertAdjacentHTML("beforeend", productList[i]);
+    }
+}
 
 const renderProducts = (list = []) => {
-    const productList = list.map((item) => {
-        return renderProduct(item.title, item.price);
-    });
+    const productList = list.map(item => renderProduct(item.title, item.price));
     // let productList = [];
 
     // for (let i = 0; i < list.length; i++) {
@@ -26,8 +29,10 @@ const renderProducts = (list = []) => {
     //     productList.push(renderProduct(item.title, item.price));
     // }
 
-    document.querySelector('.products').innerHTML = productList;
+    // document.querySelector('.products').innerHTML = productList;
     // console.log(productList);
+
+    insertList(productList);
 }
 
 renderProducts(products);
