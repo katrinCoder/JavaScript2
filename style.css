@@ -1,0 +1,11 @@
+.red {
+    border-color: red;
+}
+
+.red-text {
+    color: red;
+}
+
+.invisible {
+    display: none;
+}

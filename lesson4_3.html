@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form">
+        Введите ваше имя: <input type="text" id="name">
+        <output id="name-error" class="red-text invisible">Имя должно содержать только буквы</output><br>
+        Введите ваш телефон: <input type="tel" id="tel">
+        <output id="tel-error" class="red-text invisible">Телефон должен иметь вид +7(000)000-0000</output><br>
+        Введите ваш e-mail: <input type="email" id="email">
+        <output id="email-error" class="red-text invisible">E-mail должен иметь вид mymail@mail.ru, или my.mail@mail.ru, или my-mail@mail.ru</output><br>
+        Введите дополнительный текст: <input type="text" id="text">
+        <output id="text-error" class="red-text invisible">Введен пустой текст</output><br>
+        <button type="submit">Отправить</button>
+    </form>
+<script>
+    document.querySelector('#form').addEventListener('click', evt => evt.preventDefault());
+    const button = document.querySelector('button');
+
+    const regExp = [/[a-zA-Zа-яА-ЯёЁ]+/,
+                    /\+\d{1}\(\d{3}\)\d{3}-\d{4}/,
+                    /\w+[\w\.\-]@[a-z]+[(mail)(ya)(yandex)(gmail)]?\.[(ru)(com)]?/,
+                    /[a-zA-Zа-яА-ЯёЁ]+/];
+
+    const forms = [ document.querySelector('#name'),
+                    document.querySelector('#tel'),
+                    document.querySelector('#email'),
+                    document.querySelector('#text')];
+
+    const error = [ document.querySelector('#name-error'),
+                    document.querySelector('#tel-error'),
+                    document.querySelector('#email-error'),
+                    document.querySelector('#text-error')];
+    
+    button.addEventListener('click', checkForm);
+
+    function checkForm() {
+        for(let i = 0; i<forms.length; i++) {
+            if (regExp[i].test(forms[i].value)) {
+                forms[i].classList.remove('red');
+                error[i].classList.add('invisible');
+            } else{
+                forms[i].classList.add('red');
+                error[i].classList.remove('invisible');
+            }
+        }
+    };
+
+</script>
+</body>
+</html>
