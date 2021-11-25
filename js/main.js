@@ -65,10 +65,6 @@ const app = new Vue({
           }
         })
     },
-    _updateCart(product){
-      block.querySelector('.product-quantity').textContent = `Количество: ${product.quantity}`;
-      block.querySelector('.product-price').textContent = `${product.quantity * product.price} ₽`;
-    },
     filterGoods(searchLine) {
       console.log(searchLine);
       const regexp = new RegExp(searchLine, 'i');

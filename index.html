@@ -25,7 +25,7 @@
                         <img :src="imgCart" alt="Some image">
                         <div class="product-desc">
                             <p class="product-title">{{product.product_name}}</p>
-                            <p class="product-quantity">{{product.quantity}}</p>
+                            <p class="product-quantity" v-bind="text">Количество: {{product.quantity}}</p>
                             <p class="product-single-price">{{product.price}}₽ за ед.</p>
                         </div>
                     </div>
