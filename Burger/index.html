@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Бургерная</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<header>
+    <div class="logo">Бургерная</div>
+</header>
+<main>
+    <div class="createBurger">
+        <form class="size radio">
+            <p><b>Выберите размер бургера:</b></p>
+            <p><input type="radio" name="size" id="small" value="small"/><label for="small">Маленький (50 рублей, 20 калорий)</label></p>
+            <p><input type="radio" name="size" id="middle" value="middle" checked="checked"/><label for="middle">Средний (75 рублей, 30 калорий)</label></p>
+            <p><input type="radio" name="size" id="big" value="big"/><label for="big">Большой (100 рублей, 40 калорий)</label></p>
+        </form>
+        <form class="filling radio">
+            <p><b>Гамбургер может быть с одним из нескольких видов начинок:</b></p>
+            <p><input type="radio" name="filling" id="cheese" value="cheese" checked="checked"/><label for="cheese">С сыром (+10 рублей, +20 калорий)</label></p>
+            <p><input type="radio" name="filling" id="salad" value="salad"/><label for="salad">С салатом (+20 рублей, +5 калорий)</label></p>
+            <p><input type="radio" name="filling" id="potato" value="potato"/><label for="potato">С картофелем (+15 рублей, +10 калорий)</label></p>
+        </form>
+        <form class="topping radio">
+            <p><b>Дополнительно гамбургер можно посыпать приправой и полить майонезом:</b></p>
+            <p><input type="checkbox" name="topping" id="spice" value="spice"/><label for="spice">Приправа (+15 рублей, +0 калорий)</label></p>
+            <p><input type="checkbox" name="topping" id="mayo" value="mayo"/><label for="mayo">Майонез (+20 рублей, +5 калорий)</label></p>
+        </form>
+    </div>
+    <div class="result">
+        <div id="result_text">Ваш выбоор:</div>
+        <div id="result_price"></div>
+        <div id="result_calories"></div>
+    </div>
+</main>
+<script src="./js/main.js"></script>
+</body>
+</html>
+
+<!-- !* Некая сеть фастфуда предлагает несколько видов гамбургеров:
+Маленький (50 рублей, 20 калорий).
+Большой (100 рублей, 40 калорий).
+Гамбургер может быть с одним из нескольких видов начинок (обязательно):
+С сыром (+10 рублей, +20 калорий).
+С салатом (+20 рублей, +5 калорий).
+С картофелем (+15 рублей, +10 калорий).
+Дополнительно гамбургер можно посыпать приправой (+15 рублей, +0 калорий) и полить майонезом (+20 рублей, +5 калорий). 
+Напишите программу, рассчитывающую стоимость и калорийность гамбургера. Можно использовать примерную архитектуру класса со следующей страницы, но можно использовать и свою. -->

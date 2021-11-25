@@ -1,0 +1,45 @@
+body {
+    font-family: 'SF Pro Display', sans-serif;
+}
+
+header {
+    display: flex;
+    background-color: darkred;
+    justify-content: center;
+    color: #fafafa;
+    padding: 30px 80px;
+    position: relative;
+}
+
+.logo {
+    text-transform: uppercase;
+    font-weight: bold;
+    align-self: center;
+}
+
+p {
+    margin: 0 0 5px 0;
+}
+
+.createBurger {
+    margin: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.result {
+    background-color: wheat;
+    padding: 50px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.radio {
+    width: 33%;
+    margin: 10px;
+}
+
+#result_text, #result_price, #result_calories {
+    font-weight: bold;
+}
